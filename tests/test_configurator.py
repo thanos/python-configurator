@@ -1,7 +1,12 @@
+import tempfile
+import json
 
 from configurator.cli import main
 from configurator.config import Configurable
-
+class O(object):
+    """
+    test object
+    """
 def test_main():
     assert main([]) == 0
 
@@ -48,14 +53,24 @@ def test_config_from_url():
 
 
 def test_config_from_python():
+    CODE = """
+SZ=10
+SIG_SZ=10*SZ
+class Tailer:
+    READ_PERIOD = 1
+"""
+
     class MyConfig(Configurable):
         body = 'hello'
         objectType = 'Nothing'
-        config_file = 'src\\tailchaser\\tailer.py'
+
+    with tempfile.NamedTemporaryFile(suffix='.py', delete=False) as python_file:
+        name = python_file.name
+        python_file.write(CODE)
 
     o = O()
-    MyConfig.configure(o)
-    assert (o.SIG_SZ == 256)
+    MyConfig.configure(o, config_file=name)
+    assert (o.SIG_SZ == 100)
     assert (o.Tailer.READ_PERIOD == 1)
 
 
@@ -76,6 +91,6 @@ highwater = .7
 
     MyConfig.configure(o, config_file=name)
     assert (o.watermark == MyConfig.watermark)
-    assert (o.dev['timeout'] == 21)
-    assert (o.dev['highwater'] == .7)
+    assert (o.dev['timeout'] == '21')
+    assert (o.dev['highwater'] == '.7')
 

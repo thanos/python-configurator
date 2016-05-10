@@ -1,0 +1,3 @@
+[console_scripts]
+configurator = configurator.cli:main
+

@@ -1,0 +1,17 @@
+contributing.rst:11: [broken] https://github.com/thanos/python-configurator/issues: HTTP Error 404: Not Found
+contributing.rst:27: [broken] https://github.com/thanos/python-configurator/issues: HTTP Error 404: Not Found
+contributing.rst:40: [broken] https://github.com/thanos/python-configurator: HTTP Error 404: Not Found
+contributing.rst:52: [redirected permanently] http://tox.readthedocs.org/en/latest/install.html to http://tox.readthedocs.io/en/latest/install.html
+readme.rst:11: [broken] https://readthedocs.org/projects/python-configurator: HTTP Error 404: OK
+readme.rst:0: [broken] https://codecov.io/github/thanos/python-configurator: HTTP Error 404: Not Found
+readme.rst:0: [broken] https://landscape.io/github/thanos/python-configurator/master: HTTP Error 404: NOT FOUND
+readme.rst:0: [broken] https://scrutinizer-ci.com/g/thanos/python-configurator/: HTTP Error 404: Not Found
+readme.rst:19: [broken] https://readthedocs.org/projects/python-configurator: HTTP Error 404: OK
+readme.rst:35: [broken] https://codecov.io/github/thanos/python-configurator: HTTP Error 404: Not Found
+readme.rst:39: [broken] https://landscape.io/github/thanos/python-configurator/master: HTTP Error 404: NOT FOUND
+readme.rst:67: [broken] https://scrutinizer-ci.com/g/thanos/python-configurator/: HTTP Error 404: Not Found
+readme.rst:0: [redirected with Found] https://codeclimate.com/github/thanos/python-configurator to https://codeclimate.com/github/signup?name=thanos%2Fpython-configurator
+readme.rst:88: [broken] https://python-configurator.readthedocs.io/: HTTP Error 404: OK
+readme.rst:43: [redirected with Found] https://codeclimate.com/github/thanos/python-configurator to https://codeclimate.com/github/signup?name=thanos%2Fpython-configurator
+readme.rst:0: [redirected with Found] https://requires.io/github/thanos/python-configurator/requirements/?branch=master to https://requires.io/auth/login/?next=/github/thanos/python-configurator/requirements/
+readme.rst:31: [redirected with Found] https://requires.io/github/thanos/python-configurator/requirements/?branch=master to https://requires.io/auth/login/?next=/github/thanos/python-configurator/requirements/

@@ -7,19 +7,17 @@
 import json
 import os
 import sys
-import tempfile
 
+import argparse
 import six
-import six
-import argparser
-
-class O(object):
-    """
-    test object
-    """
+import requests
 
 
-class Configurable(argparser.Namespace):
+
+
+
+
+class Configurable(argparse.Namespace):
     """
     a configurable class
     """
@@ -64,7 +62,7 @@ class Configurable(argparser.Namespace):
 
     @classmethod
     def config_from_cfg(cls, config_file_name):
-        config = six.configparser.ConfigParser()
+        config = six.moves.configparser.ConfigParser()
         config.read(config_file_name)
         return config._sections
 

@@ -4,17 +4,13 @@
 
 """
 
+import argparse
 import json
 import os
 import sys
 
-import argparse
-import six
 import requests
-
-
-
-
+import six
 
 
 class Configurable(argparse.Namespace):
@@ -23,6 +19,13 @@ class Configurable(argparse.Namespace):
     """
     config_file = None
     config_url = None
+    APP_PREFIX = ''
+
+    def __init__(self, app_prefix=None):
+        self.app_prefix = app_prefix if app_prefix else self.APP_PREFIX
+        for k in os.environ:
+            if k.startswith(self.app_prefix + '_'):
+                setattr(self, k[len(self.app_prefix) + 1 if self.app_prefix else 0], os.environ[k])
 
     @classmethod
     def configure(cls, obj, **kwargs):
@@ -74,5 +77,3 @@ class Configurable(argparse.Namespace):
     def override(cls, obj, **kwargs):
         for k in kwargs:
             setattr(obj, k, kwargs[k])
-
-

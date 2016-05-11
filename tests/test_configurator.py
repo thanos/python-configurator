@@ -1,14 +1,19 @@
-import tempfile
 import json
+import tempfile
 
 from configurator.cli import main
 from configurator.config import Configurable
+
+
 class O(object):
     """
     test object
     """
+
+
 def test_main():
     assert main([]) == 0
+
 
 def test_config_by_args():
     class MyConfig(Configurable):
@@ -48,12 +53,12 @@ def test_config_from_url():
 
     o = O()
     MyConfig.configure(o)
-    assert (o.dont_backfill == False)
+    assert (o.dont_backfill is False)
     assert (o.read_period == 2)
 
 
 def test_config_from_python():
-    CODE = """
+    code = """
 SZ=10
 SIG_SZ=10*SZ
 class Tailer:
@@ -66,7 +71,7 @@ class Tailer:
 
     with tempfile.NamedTemporaryFile(suffix='.py', delete=False) as python_file:
         name = python_file.name
-        python_file.write(CODE)
+        python_file.write(code)
 
     o = O()
     MyConfig.configure(o, config_file=name)
@@ -93,4 +98,3 @@ highwater = .7
     assert (o.watermark == MyConfig.watermark)
     assert (o.dev['timeout'] == '21')
     assert (o.dev['highwater'] == '.7')
-

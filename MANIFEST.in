@@ -15,7 +15,20 @@ include CHANGELOG.rst
 include CONTRIBUTING.rst
 include LICENSE
 include README.rst
-
+recursive-include dist *.buildinfo
+recursive-include dist *.css
+recursive-include dist *.doctree
+recursive-include dist *.eot
+recursive-include dist *.gif
+recursive-include dist *.html
+recursive-include dist *.inv
+recursive-include dist *.js
+recursive-include dist *.pickle
+recursive-include dist *.png
+recursive-include dist *.svg
+recursive-include dist *.ttf
+recursive-include dist *.txt
+recursive-include dist *.woff
 include tox.ini .travis.yml appveyor.yml
 
 global-exclude *.py[cod] __pycache__ *.so *.dylib
